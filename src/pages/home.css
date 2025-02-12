@@ -1,0 +1,41 @@
+.home {
+    position: relative;
+}
+
+.home .info {
+    position: absolute;
+    top: 40%;
+    right: 17%;
+    width: 500px;
+    border: 1px solid #e5e3ee;
+    border-radius: 12px;
+    padding: 15px;
+    padding-bottom: 100px;
+}
+
+.home .info h4 {
+    font-size: 95px;
+    color: darkcyan;
+    font-family: cursive;
+    margin-bottom: 0;
+}
+
+.home .info h6 {
+    color: #05050505;
+    padding-left: 120px;
+    margin-top: -18px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.home .controls {
+    position: absolute;
+    top: 60%;
+    right: 25%;
+    width: 200px;
+}
