@@ -10,7 +10,15 @@ function Home() {
             </div>
 
             <div className="controls mt-4">
-                <Link to="/catalog" className="btn btn-success btn-lg px-5 py-3 fw-bold shadow">Check Our Catalog!</Link>
+                <Link to="/catalog" className="btn btn-success btn-lg px-5 py-3 fw-bold shadow">
+                    <div>
+                        Check Our Catalog
+                    </div>
+
+                    <div>
+                        Click Here
+                    </div>
+                </Link>
             </div>
         </div>
     );

@@ -2,8 +2,8 @@ import './cart.css';
 
 function Cart() {
     return (
-        <div className="container">
-            <h1>Cart</h1>
+        <div className="cart page container">
+            <h1 className='text-success'>Cart</h1>
             <div className="row">
                 <div className="col-md-8">
                     <div className="card">

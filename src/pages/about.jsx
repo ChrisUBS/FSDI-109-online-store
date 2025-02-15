@@ -12,7 +12,7 @@ function About() {
 
     return (
         <div className="about page">
-            <h1>Christian Bonilla</h1>
+            <h1 className='text-success'>Christian Bonilla</h1>
             { showEmail 
                 ? <h5 className='mb-2'>christian.bonilla@uabc.edu.mx</h5>
                 : <p className='mb-2'>Click the button bellow to see my email address.</p> 

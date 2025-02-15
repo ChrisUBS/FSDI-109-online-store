@@ -63,7 +63,7 @@ function Admin() {
 
     return (
         <div className="admin page">
-            <h1>Store administration</h1>
+            <h1 className='text-success'>Store administration</h1>
             <div className="admin-container d-flex justify-content-around">
                 <div className='register col-7'>
                     <h3>Register new product</h3>

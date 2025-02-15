@@ -1,8 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import DataContext from '../state/dataContext';
 
 function Navbar() {
+
+    const user = useContext(DataContext).user;
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-success">
             <div className="container">
@@ -38,6 +43,11 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link text-white" to="/contact">
+                                📞 Contact
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link text-white" to="/about">
                                 ☰ About
                             </Link>
@@ -46,6 +56,12 @@ function Navbar() {
                             <Link className="nav-link text-white" to="/admin">
                                 🔑 Admin
                             </Link>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-white fw-bold" href="#">
+                                <i class="fa-solid fa-circle-user me-1"></i>
+                                {user.name}
+                            </a>
                         </li>
                     </ul>
                 </div>

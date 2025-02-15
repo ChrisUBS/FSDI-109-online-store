@@ -4,7 +4,8 @@
 }
 
 .admin h1 {
-    color: darkcyan;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .admin .register,

@@ -66,7 +66,7 @@ const catalog = [
         "_id": "9"
     },
     {
-        "title": "corn",
+        "title": "Corn",
         "image": "/images/corn.webp",
         "price": 1.90,
         "category": "vegetable",
