@@ -1,59 +1,37 @@
+import { useContext } from 'react';
 import './cart.css';
+import DataContext from '../state/dataContext';
 
 function Cart() {
+
+    const cart = useContext(DataContext).cart;
+
+    function getTheCart() {
+        return cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
+
     return (
         <div className="cart page container">
             <h1 className='text-success'>Cart</h1>
             <div className="row">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>Cart Items</h3>
-                            <ul className="list-group">
-                                <li className="list-group-item">
-                                    <div className="row">
-                                        <div className="col-md-2">
-                                            <img
-                                                src="https://via.placeholder.com/150"
-                                                alt="Product"
-                                                className="img-fluid"
-                                            />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <h4>Product Name</h4>
-                                            <p>Product Description</p>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <button className="btn btn-primary">+</button>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <button className="btn btn-danger">-</button>
-                                                </div>
-                                            </div>
-                                            <p>Quantity: 2</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h3>Cart Summary</h3>
-                            <p>Subtotal: $100</p>
-                            <p>Tax: $10</p>
-                            <p>Total: $110</p>
-                            <button className="btn btn-success">Checkout</button>
-                        </div>
-                    </div>
-                </div>
+                <h3>We have <strong>{getTheCart()}</strong> products in the cart</h3>
             </div>
         </div>
     );
 }
 
 export default Cart;
+
+/**
+ * render a H3 with something like:
+ * we have X products in the cart
+ * 
+ * where X is the number of products.
+ * 
+ * Connect to the context (remember the 2 imports)
+ * get the cart
+ * create a function that calculates the number of products
+ * 
+ * call the fn from the H3
+ * 
+ */

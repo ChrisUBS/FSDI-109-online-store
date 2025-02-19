@@ -5,8 +5,12 @@ import { useContext } from 'react';
 import DataContext from '../state/dataContext';
 
 function Navbar() {
-
     const user = useContext(DataContext).user;
+    const cart = useContext(DataContext).cart;
+
+    function getProdsInCart() {
+        return cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-success">
@@ -26,7 +30,7 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
+                    <ul className="navbar-nav me-auto">
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="/home">
                                 🏠 Home
@@ -35,11 +39,6 @@ function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="/catalog">
                                 🍎 Catalog
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" to="/cart">
-                                🛒 View Cart
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -57,9 +56,19 @@ function Navbar() {
                                 🔑 Admin
                             </Link>
                         </li>
+                    </ul>
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link text-white position-relative" to="/cart">
+                                🛒 View Cart 
+                                <span className="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle p-1 small">
+                                    {getProdsInCart()}
+                                </span>
+                            </Link>
+                        </li>
                         <li className="nav-item">
                             <a className="nav-link text-white fw-bold" href="#">
-                                <i class="fa-solid fa-circle-user me-1"></i>
+                                <i className="fa-solid fa-circle-user me-1"></i>
                                 {user.name}
                             </a>
                         </li>
