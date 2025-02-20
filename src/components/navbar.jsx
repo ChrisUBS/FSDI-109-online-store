@@ -14,7 +14,7 @@ function Navbar() {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-success">
-            <div className="container">
+            <div className="container-fluid mx-3">
                 <Link className="navbar-brand text-white fw-bold" to="/">
                     Organika Store
                 </Link>
@@ -60,8 +60,8 @@ function Navbar() {
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
                             <Link className="nav-link text-white position-relative" to="/cart">
-                                🛒 View Cart 
-                                <span className="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle p-1 small">
+                                🛒 View Cart
+                                <span className="badge rounded-pill text-bg-danger ms-1 small">
                                     {getProdsInCart()}
                                 </span>
                             </Link>

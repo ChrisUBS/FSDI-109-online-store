@@ -7,11 +7,21 @@ function GlobalProvider(props) {
     const [user, setUser] = useState({name: "Chris"});
 
     function addProductToCart(product) {
-        console.log("Global add");
-        // 3 setps to push product into the cart array
-        let copy = [...cart];
-        copy.push(product);
-        setCart(copy);
+        setCart((prevCart) => {
+            const existingItem = prevCart.find(item => item._id === product._id);
+    
+            if (existingItem) {
+                // If product exists, update its quantity
+                return prevCart.map(item =>
+                    item._id === product._id 
+                        ? { ...item, quantity: item.quantity + product.quantity } 
+                        : item
+                );
+            } else {
+                // If product is not in the cart, add it
+                return [...prevCart, product];
+            }
+        });
     }
 
     function removeProductFromCart() {
